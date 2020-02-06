@@ -1,0 +1,10 @@
+<div style="width: 40px;"></div>
+<div id="sidenav">    
+    <button class="text-light" [matMenuTriggerFor]="menu" mat-icon-button><mat-icon>menu</mat-icon></button>
+    <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/dashboard">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+    </button>
+    </mat-menu>
+</div>
