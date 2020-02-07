@@ -27,7 +27,6 @@ $smsi-v2-theme: mat-light-theme($smsi-v2-primary, $smsi-v2-accent, $smsi-v2-warn
 @include angular-material-theme($smsi-v2-theme);
 
 /* You can add global styles to this file, and also import other style files */
-$sidenav-width: 40px;
-
 html, body { height: 100%; }
-body { margin: 0; padding-left: $sidenav-width; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+*:focus, *:active { outline:none !important; }
