@@ -39,8 +39,7 @@
   .mat-list-item:hover{
       background: #3e454d;
       cursor: pointer;
+
+      mat-icon { transition: 200ms; }
+      .rotateArrow{ transform: rotate(-90deg); }
   }
-
-  .rotateArrow{ transform: rotate(-90deg); }
-
-  mat-icon { transition: 200ms; }
