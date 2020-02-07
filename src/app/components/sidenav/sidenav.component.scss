@@ -1,9 +1,46 @@
 #sidenav{
-    // position: absolute;
-    // top: 0;
-    // left: 0;
+    position: relative;
     width: 40px;
     height: 100vh;
     background-color: #343a40;
     color: #FFFFFF;
+    transition: 200ms;
 }
+
+#profile-pic{ 
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #FFF;
+    margin: auto;
+    margin-top: 10px;
+    background-size: contain;
+  }
+
+  #profile-pic-clip{ 
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #343a40;
+    position: absolute;
+    left: 114px;
+    bottom: -30px;
+  }
+  
+  #sidenav-user-content{
+    width: 100%;
+    text-align: center;
+    background: #272b30;
+    padding: 50px 0;
+    position: absolute;
+    top: 0;
+  }
+
+  .mat-list-item:hover{
+      background: #3e454d;
+      cursor: pointer;
+  }
+
+  .rotateArrow{ transform: rotate(-90deg); }
+
+  mat-icon { transition: 200ms; }

@@ -1,20 +1,52 @@
-<div class="d-flex flex-column" id="sidenav" [@slideState]="stateName">    
-    <button (click)="toggle()" mat-icon-button><mat-icon>menu</mat-icon></button>
-    <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/dashboard">
-        <mat-icon>dashboard</mat-icon>
-        <span>Dashboard</span>
-    </button>
-    </mat-menu>
+<div class="d-flex flex-column" id="sidenav" [@slideState]="sidenavState">        
     <div *ngIf="expand">
-        <button routerLink="/dashboard">
-            <mat-icon>dashboard</mat-icon>
-            <span>Dashboard</span>
-        </button>
+        <button (click)="toggleSidenav()" mat-icon-button style="z-index: 1; float: right;"><mat-icon>menu</mat-icon></button>
+        <div id="sidenav-user-content" class="">            
+            <div style="position: absolute; top: 20px; left: 10px;">
+                <img style="width: 40px;" src="../Content/img/logo_white_nav.svg" />
+            </div>
+            <h6 style="color: #FFF; margin: 0; margin-bottom: 10px;" class="text-capitalize">Welcome <strong>username</strong> !</h6>            
+            <div id="profile-pic-clip">
+                <div id="profile-pic" style="background-image: url('/Content/img/img-default.png');"></div>
+            </div>
+        </div>
+        <div id="sidenav-content">
+            <mat-list dense style="margin-top: 200px;">
+                <h6 class="text-uppercase text-muted ml-3" >Application</h6>
+                <mat-list-item matRipple *ngFor="let link of applicationLinks" class="text-light" style="font-size: 14px; height: 40px;" routerLink="{{link.link}}">                    
+                    <mat-icon matListIcon>{{link.icon}}</mat-icon>
+                    <p matLine> {{link.title}} </p>
+                </mat-list-item>
+            </mat-list>
+
+            <h6 class="m-0 ml-3 mt-3 text-uppercase text-muted" >Settings</h6>
+            <mat-list *ngFor="let link of settingsLinks" dense >                
+                <mat-list-item matRipple id={{link.id}} (click)="toggleDropdown(link.id)" class="text-light" style="font-size: 14px; height: 40px;">                    
+                    <mat-icon matListIcon>{{link.icon}}</mat-icon>
+                    <p matLine> {{link.title}} </p>    
+                    <mat-icon class="expand-icon">expand_more</mat-icon>
+                </mat-list-item>          
+                <mat-list-item *ngFor="let child of link.children" class="sub-{{link.id}} mat-list-item text-light pl-3" style="font-size: 14px; height: 40px;" routerLink="{{link.link}}">                    
+                    <mat-icon matListIcon>{{child.icon}}</mat-icon>
+                    <p matLine matRipple> {{child.title}} </p>                    
+                </mat-list-item>     
+            </mat-list>
+            
+        </div>
+
     </div>   
-    <div *ngIf="!expand">
-        <button routerLink="/dashboard">
-            <mat-icon>dashboard</mat-icon>
-        </button>
+    <div *ngIf="!expand">   
+        <button (click)="toggleSidenav()" mat-icon-button><mat-icon>menu</mat-icon></button> 
+        <mat-list dense style="margin-top: 20px;" class="justify-content-center">
+            <mat-list-item matRipple *ngFor="let link of applicationLinks" class="text-light" style="font-size: 14px; height: 40px;" routerLink="{{link.link}}" [matTooltip]="link.title" matTooltipPosition="right">                    
+                <mat-icon style="position: absolute; left: 8px;">{{link.icon}}</mat-icon>
+            </mat-list-item>
+        </mat-list>
+        <mat-list dense class="justify-content-center" *ngFor="let link of settingsLinks">
+            <mat-list-item matRipple *ngFor="let child of link.children" class="text-light" style="font-size: 14px; height: 40px;" routerLink="{{child.link}}" [matTooltip]="child.title" matTooltipPosition="right">                    
+                <mat-icon style="position: absolute; left: 8px;">{{child.icon}}</mat-icon>
+            </mat-list-item>
+        </mat-list>
     </div>  
 </div>
+
