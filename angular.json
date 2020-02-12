@@ -29,11 +29,16 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/mdb.css",
+              "src/assets/css/style.min.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",              
+              "src/assets/js/jquery-3.4.1.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/mdb.min.js",
+              "node_modules/wowjs/dist/wow.js"
             ]
           },
           "configurations": {

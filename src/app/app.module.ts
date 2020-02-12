@@ -10,19 +10,24 @@ import { MaterialModule } from './modules/material/material.module';
 
 import { MainComponent } from './components/main/main.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { FooterComponent } from './components/footer/footer.component';
+
+import { NgwWowModule } from 'ngx-wow';
 
 @NgModule({
   declarations: [
     AppComponent,    
     SidenavComponent,
     MainComponent,
-    RoutingComponents
+    RoutingComponents,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    NgwWowModule
   ],
   providers: [],
   bootstrap: [AppComponent]

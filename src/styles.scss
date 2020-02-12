@@ -28,5 +28,20 @@ $smsi-v2-theme: mat-light-theme($smsi-v2-primary, $smsi-v2-accent, $smsi-v2-warn
 
 /* You can add global styles to this file, and also import other style files */
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background: rgb(36,34,162);
+    background: -moz-linear-gradient(153deg, rgba(36,34,162,1) 0%, rgba(33,150,243,1) 100%);
+    background: -webkit-linear-gradient(153deg, rgba(36,34,162,1) 0%, rgba(33,150,243,1) 100%);
+    background: linear-gradient(153deg, rgba(36,34,162,1) 0%, rgba(33,150,243,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2422a2",endColorstr="#2196f3",GradientType=1);
+}
 *:focus, *:active { outline:none !important; }
+
+.card{
+    background: rgb(111,172,249);
+    background: -moz-linear-gradient(153deg, rgba(111,172,249,1) 0%, rgba(0,139,249,1) 84%);
+    background: -webkit-linear-gradient(153deg, rgba(111,172,249,1) 0%, rgba(0,139,249,1) 84%);
+    background: linear-gradient(153deg, rgba(111,172,249,1) 0%, rgba(0,139,249,1) 84%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6facf9",endColorstr="#008bf9",GradientType=1);
+}
