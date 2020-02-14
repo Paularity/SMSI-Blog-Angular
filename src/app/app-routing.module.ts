@@ -16,7 +16,7 @@ import { SitemapComponent } from './components/sitemap/sitemap.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'business-philosophy', component: BusinessPhilosophyComponent },
   { path: 'business-model', component: BusinessModelComponent },

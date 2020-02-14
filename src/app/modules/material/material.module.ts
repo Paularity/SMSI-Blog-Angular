@@ -1,27 +1,24 @@
 import { NgModule } from '@angular/core';
 
-//Import Material Components here...
-import {MatButtonModule} from '@angular/material';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatRippleModule} from '@angular/material/core';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import {
+  MatButtonModule,
+  MatDatepickerModule,
+  MatIconModule,
+  MatInputModule,
+  MatSliderModule,
+  MatToolbarModule,
+  MatTreeModule
+} from '@angular/material';
 
 //Add Material Components here...
 const MaterialComponents = [ 
   MatButtonModule,
-  MatToolbarModule,
+  MatDatepickerModule,
   MatIconModule,
-  MatSidenavModule,
-  MatListModule,
-  MatMenuModule,
-  MatExpansionModule,
-  MatRippleModule,
-  MatTooltipModule
+  MatInputModule,
+  MatSliderModule,
+  MatToolbarModule,
+  MatTreeModule
 ];
 
 @NgModule({

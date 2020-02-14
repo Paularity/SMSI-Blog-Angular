@@ -32,13 +32,17 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/css/bootstrap.min.css",
               "src/assets/css/mdb.css",
-              "src/assets/css/style.min.css"
+              "src/assets/css/style.min.css",
+              "src/assets/gantt/controls_styles.css",
+              "src/assets/gantt/dhtmlxgantt_material.css"
             ],
             "scripts": [
               "src/assets/js/jquery-3.4.1.min.js",
               "src/assets/js/bootstrap.min.js",
               "src/assets/js/mdb.min.js",
-              "node_modules/wowjs/dist/wow.js"
+              "node_modules/wowjs/dist/wow.js",
+              "src/assets/gantt/dhtmlxgantt.js",
+              "src/assets/gantt/dhtmlxgantt_marker.js"
             ]
           },
           "configurations": {

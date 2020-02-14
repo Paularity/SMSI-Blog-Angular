@@ -1,47 +1,10 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat-core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$smsi-v2-primary: mat-palette($mat-indigo);
-$smsi-v2-accent: mat-palette($mat-pink, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-$smsi-v2-warn: mat-palette($mat-red);
-
-// Create the theme object (a Sass map containing all of the palettes).
-$smsi-v2-theme: mat-light-theme($smsi-v2-primary, $smsi-v2-accent, $smsi-v2-warn);
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include angular-material-theme($smsi-v2-theme);
-
-/* You can add global styles to this file, and also import other style files */
-html, body { height: 100%; }
-body { 
-    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background: rgb(36,34,162);
-    background: -moz-linear-gradient(153deg, rgba(36,34,162,1) 0%, rgba(33,150,243,1) 100%);
-    background: -webkit-linear-gradient(153deg, rgba(36,34,162,1) 0%, rgba(33,150,243,1) 100%);
-    background: linear-gradient(153deg, rgba(36,34,162,1) 0%, rgba(33,150,243,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2422a2",endColorstr="#2196f3",GradientType=1);
+.gantt_add { display: none; }
+.gantt_task_content { display: none; }
+[data-column-id="add"], [column_id="add"] { display: none; }
+.gantt_radio:checked + label:after, .gantt_radio:not(:checked) + label:after {
+  width: 16px !important;
+  height: 16px !important;
+  top: 1px !important;
+  left: 1px !important;
 }
-*:focus, *:active { outline:none !important; }
-
-.card{
-    background: rgb(111,172,249);
-    background: -moz-linear-gradient(153deg, rgba(111,172,249,1) 0%, rgba(0,139,249,1) 84%);
-    background: -webkit-linear-gradient(153deg, rgba(111,172,249,1) 0%, rgba(0,139,249,1) 84%);
-    background: linear-gradient(153deg, rgba(111,172,249,1) 0%, rgba(0,139,249,1) 84%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6facf9",endColorstr="#008bf9",GradientType=1);
-}
+.currMonth{ background: tomato !important;}

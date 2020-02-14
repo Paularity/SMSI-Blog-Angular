@@ -14,6 +14,11 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { NgwWowModule } from 'ngx-wow';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { ResizableModule } from 'angular-resizable-element';
+
 @NgModule({
   declarations: [
     AppComponent,    
@@ -24,10 +29,15 @@ import { NgwWowModule } from 'ngx-wow';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MaterialModule,
-    NgwWowModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    NgwWowModule,
+    ResizableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
