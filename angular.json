@@ -42,7 +42,8 @@
               "src/assets/js/mdb.min.js",
               "node_modules/wowjs/dist/wow.js",
               "src/assets/gantt/dhtmlxgantt.js",
-              "src/assets/gantt/dhtmlxgantt_marker.js"
+              "src/assets/gantt/dhtmlxgantt_marker.js",
+              "src/assets/gantt/dhtmlxgantt_tooltip.js"
             ]
           },
           "configurations": {

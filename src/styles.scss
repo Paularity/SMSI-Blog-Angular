@@ -1,3 +1,14 @@
+$colors: (
+    primary: #005DFF,
+    primary-light: lighten(#005DFF, 40%),
+    primary-dark: darken(#005DFF, 40%),
+    accent: #FFF6BB
+);
+
+@function color($color-name){
+    @return map-get($colors, $color-name);
+}
+
 .gantt_add { display: none; }
 .gantt_task_content { display: none; }
 [data-column-id="add"], [column_id="add"] { display: none; }
@@ -8,3 +19,23 @@
   left: 1px !important;
 }
 .currMonth{ background: tomato !important;}
+
+.gantt_task_line{
+  transition: 200ms;
+  
+  &:hover{
+    cursor: pointer;
+    background-color: color(primary-light);
+  }
+  &:active{
+    background-color: color(primary-dark);
+  }
+}
+
+// $desktop: 840px;
+
+// @mixin desktop {
+//     @media(min-width: #{$desktop}){
+//         @content;
+//     }
+// }
