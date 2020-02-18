@@ -10,16 +10,16 @@ export class HomeComponent implements OnInit {
 
   tasks = {
     data: [
-      { id: 1, text: "Lihir", order: 10, progress: null, open: true, },
-      { id: 2, text: "Griding", progress: null, parent: 1, open: true },
-      { id: 4, text: "Mills Feeder",  duration: 8, progress: null, parent: 2, open: true,render:"split" },
-      { id: 5, text: "Mills Feeder #1", start_date: "02-03-2020", duration: 8, progress: null, parent: 4, open: true },
-      { id: 6, text: "Mills Feeder #2", start_date: "12-03-2020", duration: 3, progress: null, parent: 4, open: true },
-      { id: 7, text: "Mills Feeder #3", start_date: "22-03-2020", duration: 15, progress: null, parent: 4, open: true },
-      { id: 8, text: "NCA",  duration: 8, progress: null, parent: 2, open: true,render:"split" },
-      { id: 9, text: "NCA #1", start_date: "02-04-2020", duration: 18, progress: null, parent: 8, open: true },
-      { id: 10, text: "NCA #2", start_date: "12-02-2020", duration: 23, progress: null, parent: 8, open: true },
-      { id: 11, text: "NCA #3", start_date: "22-06-2020", duration: 5, progress: null, parent: 8, open: true },
+      { id: 1, text: "Lihir", order: 10, progress: null, open: true, level: 0 },
+      { id: 2, text: "Griding", progress: null, parent: 1, open: true, level: 1 },
+      { id: 3, text: "Mills Feeder",  duration: 8, progress: null, parent: 2, open: true,render:"split", level: 3 },
+      { id: 4, text: "Mills Feeder #1", start_date: "02-03-2020", duration: 8, progress: null, parent: 3, open: true, level: 4 },
+      { id: 5, text: "Mills Feeder #2", start_date: "12-03-2020", duration: 3, progress: null, parent: 3, open: true, level: 4 },
+      { id: 6, text: "Mills Feeder #3", start_date: "22-03-2020", duration: 15, progress: null, parent: 3, open: true, level: 4 },
+      { id: 7, text: "NCA",  duration: 8, progress: null, parent: 2, open: true,render:"split", level: 3 },
+      { id: 8, text: "NCA #1", start_date: "02-04-2020", duration: 18, progress: null, parent: 7, open: true, level: 4 },
+      { id: 9, text: "NCA #2", start_date: "12-02-2020", duration: 23, progress: null, parent: 7, open: true, level: 4 },
+      { id: 10, text: "NCA #3", start_date: "22-06-2020", duration: 5, progress: null, parent: 7, open: true, level: 4 },
     ],
     links: [
       // {id: 1, source: 1, target: 2, type: "1"},
@@ -99,9 +99,10 @@ export class HomeComponent implements OnInit {
         {
           name:"year",
           scale_height: 50,
-          min_column_width: 30,
+          min_column_width: 0,
           scales:[
-            {unit: "year", step: 1, format: "%Y"}
+            {unit: "year", step: 1, format: "%Y"},            
+            {unit: "month", step: 1, format: "%M"}
           ]
         }
       ]
@@ -122,30 +123,40 @@ export class HomeComponent implements OnInit {
   }
 
   getColorCodes(){
-
+    gantt.templates.task_class = function(start,end,task){
+      if(task.level == 0){
+        return "site_bar";
+      }
+      else if(task.level == 1){
+        return "plant_bar"
+      }
+      else{
+        return;
+      }
+    };
   }
 
   initGantt( id, data ) {
-    gantt.attachEvent("onTaskClick", (id, e) => {
-      let task = gantt.getTask(id);
-
-      gantt.alert({
-        title:"Alert",
-        type:"alert-info",
-        text:"You have click on " + task.text
-      });
-    });
-    gantt.config.readonly = true;
-    gantt.init(id);    
-    gantt.parse(data);        
-  }  
-
-  ngOnInit() {               
-       
-    this.initGantt('gantt-sample', this.tasks);
+    // gantt.attachEvent("onTaskClick", (id, e) => {
+    //   let task = gantt.getTask(id);
+      
+    //   gantt.alert({
+    //     title:"Alert",
+    //     type:"alert-info",
+    //     text:"You have click on " + task.text
+    //   });
+    // });    
+    this.getColorCodes();
     this.getMarker();
     this.getHeaders();
-    this.getScaling();        
+    this.getScaling();    
+    gantt.config.readonly = true;
+    gantt.init(id);    
+    gantt.parse(data);     
+  }  
+
+  ngOnInit() {                      
+    this.initGantt('gantt-sample', this.tasks);        
   }
 
   zoomIn = () => {

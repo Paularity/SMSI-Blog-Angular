@@ -1,6 +1,6 @@
 $colors: (
     primary: #005DFF,
-    primary-light: lighten(#005DFF, 40%),
+    primary-light: lighten(#005DFF, 20%),
     primary-dark: darken(#005DFF, 40%),
     accent: #FFF6BB
 );
@@ -9,8 +9,12 @@ $colors: (
     @return map-get($colors, $color-name);
 }
 
+.site_bar{ background-color: #7e57c2 !important; border-color: #7e57c2 !important; }
+.site_bar:hover{ background-color: lighten(#7e57c2, 10%) !important; }
+.plant_bar{ background-color: #5c6bc0 !important; border-color: #5c6bc0 !important; }
+.plant_bar:hover{ background-color: lighten(#5c6bc0, 10%) !important; }
 .gantt_add { display: none; }
-.gantt_task_content { display: none; }
+// .gantt_task_content { display: none; }
 [data-column-id="add"], [column_id="add"] { display: none; }
 .gantt_radio:checked + label:after, .gantt_radio:not(:checked) + label:after {
   width: 16px !important;
@@ -38,4 +42,4 @@ $colors: (
 //     @media(min-width: #{$desktop}){
 //         @content;
 //     }
-// }
+// } 
