@@ -26,6 +26,7 @@ $colors: (
 
 .gantt_task_line{
   transition: 200ms;
+  border-radius: 5px !important;
   
   &:hover{
     cursor: pointer;
